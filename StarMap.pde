@@ -14,6 +14,7 @@ void setup()
   println(table.getRowCount() + "total rows in table");
   
   loadData();
+  printStars();
 }
 
 void loadData()
@@ -30,6 +31,14 @@ void loadData()
       );
       stars.add(StarData);
     }
+}
+
+void printStars()
+{
+  for(Star StarData: stars)
+  {
+    println(StarData);
+  }
 }
 
 void draw()
