@@ -46,6 +46,7 @@ void printStars()
 void draw()
 {
   drawGrid();
+  plotStars();
 }
 
 
@@ -67,4 +68,24 @@ void drawGrid()
     line(0, startHorizontalLine, width, startHorizontalLine);
     startHorizontalLine = startHorizontalLine + gridSpacing;
   }
+}
+
+void plotStars()
+{
+  for(int i=0; i< stars.size(); i++)
+  {
+    float XStar = map(stars.get(i).Xg,-5, 5, 0, width);
+    float YStar = map(stars.get(i).Yg,-5, 5, 0, height);
+    stroke(#FAFF00);
+    fill(#FAFF00);
+    ellipse(XStar,YStar, 5, 5);
+    noFill();
+    stroke(255,0,0);
+    ellipse(XStar, YStar, 15, 15);
+    
+    stroke(255);
+    fill(255);
+    text(stars.get(i).StarName,XStar,YStar);
+  }
+ 
 }
